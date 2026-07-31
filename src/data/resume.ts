@@ -20,10 +20,10 @@ export const profile = {
 export const hero = {
   headline: "Building Scalable Software for Millions.",
   subheading:
-    "Software Engineer specializing in Backend Engineering, AI-powered applications, FastAPI, Node.js, React, and scalable cloud architectures.",
+    "Software Engineer specializing in Backend Engineering, AI-powered applications, Java, Spring Boot, Node.js, React, and scalable cloud architectures.",
   roles: [
     "Backend Engineer",
-    "Python, FastAPI & AI",
+    "Java & Spring Boot",
     "Node.js & TypeScript",
     "React & Next.js",
     "Scalable API Developer",
@@ -34,8 +34,8 @@ export const hero = {
 export const about = {
   paragraphs: [
     "I'm a Software Engineer II with 3.6+ years building production software that carries real weight — multi-tenant SaaS platforms, AI document-processing pipelines, and billing systems that thousands of users touch every day. I care less about which framework is trendy and more about whether the system still holds up under load, under edge cases, and under a new engineer reading it six months later.",
-    "At Incresco Technology, I design Role-Based Access Control and multi-tenant permission models for APEX (NP360), and build an AI-powered document extraction platform that runs resumes, IDs, certificates, payslips, and bank statements through a modular multi-agent pipeline — OpenCV preprocessing, async orchestration, and validation baked in end to end. Before that, at OneBill, I helped migrate core billing modules off legacy GWT into React, rebuilt authentication as a Node.js BFF layer with JWT, and shipped a cross-platform React Native service desk app used by real support teams.",
-    "My stack runs deep on both sides: FastAPI and Node.js for services, React and Next.js for interfaces, Redis for the caching layer that keeps things fast, and PostgreSQL/MongoDB underneath. I'm drawn to the unglamorous parts of engineering — API contracts, caching strategy, permission boundaries, performance budgets — because that's where scalable systems are actually won or lost.",
+    "At Incresco Technology, I design Role-Based Access Control and multi-tenant permission models for APEX (NP360) on a Java and Spring Boot backend, and build an AI-powered document extraction platform that runs resumes, IDs, certificates, payslips, and bank statements through a modular multi-agent pipeline — OpenCV preprocessing, async orchestration, and validation baked in end to end. Before that, at OneBill, I helped migrate core billing modules off legacy GWT into React, rebuilt authentication as a Node.js BFF layer with JWT, and shipped a cross-platform React Native service desk app used by real support teams.",
+    "My stack runs deep on both sides: Java with Spring Boot and Node.js for services, React and Next.js for interfaces, Redis for the caching layer that keeps things fast, and PostgreSQL/MongoDB underneath. I'm drawn to the unglamorous parts of engineering — API contracts, caching strategy, permission boundaries, performance budgets — because that's where scalable systems are actually won or lost.",
     "Outside of ticket queues, I like compressing an MVP into days rather than weeks using AI-assisted development, and I'm always looking for the next system worth building properly.",
   ],
   highlights: [
@@ -58,7 +58,7 @@ export const techStack: TechCategory[] = [
   },
   {
     title: "Backend",
-    items: ["Node.js", "Express", "Python", "FastAPI", "Java", "REST APIs", "gRPC", "Authentication"],
+    items: ["Java", "Spring Boot", "Node.js", "Express", "REST APIs", "gRPC", "Authentication"],
   },
   {
     title: "Databases",
@@ -97,6 +97,8 @@ export const experience: ExperienceEntry[] = [
       {
         name: "APEX NP360",
         highlights: [
+          "Java",
+          "Spring Boot",
           "Role Based Access Control",
           "Multi Tenant Permissions",
           "Expert Management APIs",
@@ -134,6 +136,8 @@ export const experience: ExperienceEntry[] = [
       {
         name: "Pricing Studio",
         highlights: [
+          "Java",
+          "Spring Boot",
           "React Migration",
           "Legacy Modernization",
           "REST APIs",
@@ -146,7 +150,13 @@ export const experience: ExperienceEntry[] = [
       },
       {
         name: "React Native Service Desk",
-        highlights: ["Redis Caching", "TanStack Query", "Offline Sync"],
+        highlights: [
+          "Java",
+          "Spring Boot",
+          "Redis Caching",
+          "TanStack Query",
+          "Offline Sync",
+        ],
       },
     ],
   },
@@ -181,16 +191,16 @@ export const projects: Project[] = [
   {
     title: "Pricing Studio",
     description:
-      "Enterprise billing module migrated from legacy GWT to React — Products, Taxes, Bundles, Discounts, Policies, and Partners — with a 30% bundle-size reduction and improved TTI.",
-    tags: ["React", "REST APIs", "Performance Optimization", "Enterprise Billing"],
+      "Enterprise billing module migrated from legacy GWT to React — Products, Taxes, Bundles, Discounts, Policies, and Partners — backed by Java and Spring Boot services, with a 30% bundle-size reduction and improved TTI.",
+    tags: ["Java", "Spring Boot", "React", "REST APIs", "Performance Optimization", "Enterprise Billing"],
     category: "Web",
     featured: true,
   },
   {
     title: "Service Desk Platform",
     description:
-      "Cross-platform React Native app for Android, iOS, and Web with offline sync, flexible ticket tagging, and Redis-cached search — response times improved 10-15%.",
-    tags: ["React Native", "Offline Sync", "Redis", "Ticket Management"],
+      "Cross-platform React Native app for Android, iOS, and Web with offline sync, flexible ticket tagging, and Redis-cached search on Java and Spring Boot APIs — response times improved 10-15%.",
+    tags: ["Java", "Spring Boot", "React Native", "Offline Sync", "Redis", "Ticket Management"],
     category: "Mobile",
     featured: true,
   },
@@ -207,9 +217,9 @@ export const achievements = [
 export const skills = [
   { name: "Backend", value: 95 },
   { name: "React", value: 90 },
-  { name: "FastAPI", value: 90 },
+  { name: "Java", value: 90 },
   { name: "Node.js", value: 95 },
-  { name: "Python", value: 88 },
+  { name: "Spring Boot", value: 88 },
   { name: "System Design", value: 85 },
   { name: "Databases", value: 90 },
   { name: "Redis", value: 88 },
