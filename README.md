@@ -25,7 +25,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 All resume-derived content (profile, experience, projects, skills, education) lives in [`src/data/resume.ts`](src/data/resume.ts) — edit that file to update the site's content without touching components.
 
-The résumé PDF served for download lives at `public/resume/Murali_Prasanth_SDE-II.pdf`.
+The résumé PDF served for download lives at `public/resume/Murali_Prasanth_FullStack.pdf`.
 
 ## Scripts
 

@@ -14,7 +14,7 @@ export const profile = {
     "https://www.linkedin.com/in/murali-prasanth-ponnusamy-640bb8210/",
   leetcode: "https://leetcode.com/u/MuraliPrasanth706/",
   leetcodeUsername: "MuraliPrasanth706",
-  resumeFile: "/resume/Murali_Prasanth_SDE-II.pdf",
+  resumeFile: "/resume/Murali_Prasanth_FullStack.pdf",
 } as const;
 
 export const hero = {
