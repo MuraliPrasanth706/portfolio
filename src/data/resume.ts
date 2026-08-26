@@ -95,6 +95,20 @@ export const experience: ExperienceEntry[] = [
     location: "Coimbatore, On-site",
     projects: [
       {
+        name: "Localization & Terminology Configuration Platform",
+        highlights: [
+          "Multi Tenant SaaS",
+          "API Driven Localization",
+          "HLD & LLD",
+          "Tenant Specific Terminology",
+          "REST API Design",
+          "Role Scoped Admin Interface",
+          "Runtime Configuration",
+          "Independently Deployable Service",
+          "Zero Redeploy Updates",
+        ],
+      },
+      {
         name: "APEX NP360",
         highlights: [
           "Java",
@@ -172,6 +186,21 @@ export type Project = {
 };
 
 export const projects: Project[] = [
+  {
+    title: "Localization & Terminology Configuration Platform",
+    description:
+      "Centralized, API-driven localization for a multi-tenant SaaS — text labels and field names moved out of hardcoded JavaScript into configuration served to the frontend at runtime. Tenant-specific terminology lets different customers label the same business field differently on one shared frontend codebase, and a role-scoped Admin/Editor interface lets business users manage keys and values without a code change or redeploy.",
+    tags: [
+      "Multi Tenant SaaS",
+      "REST API Design",
+      "HLD & LLD",
+      "RBAC",
+      "Runtime Configuration",
+      "Admin Interface",
+    ],
+    category: "Backend",
+    featured: true,
+  },
   {
     title: "AI Candidate Extraction Platform",
     description:
