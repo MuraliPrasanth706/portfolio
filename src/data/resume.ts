@@ -248,7 +248,7 @@ export const skills = [
   { name: "React", value: 90 },
   { name: "Java", value: 90 },
   { name: "Node.js", value: 95 },
-  { name: "Spring Boot", value: 88 },
+  { name: "Spring Boot", value: 83 },
   { name: "System Design", value: 85 },
   { name: "Databases", value: 90 },
   { name: "Redis", value: 88 },
