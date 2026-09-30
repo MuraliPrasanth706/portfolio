@@ -1,25 +1,34 @@
 import Link from "next/link";
-import { Home } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BlobField, GridBackground } from "@/components/ui/animated-background";
+import { RuleGrid } from "@/components/ui/animated-background";
 
 export default function NotFound() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-      <GridBackground />
-      <BlobField />
-      <div className="relative z-10">
-        <p className="font-display text-gradient text-8xl font-bold sm:text-9xl">404</p>
-        <h1 className="font-display mt-4 text-2xl font-semibold sm:text-3xl">
-          This page wandered off the request path.
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+      <RuleGrid />
+      <div className="relative z-10 flex max-w-md flex-col items-start gap-6">
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-primary uppercase">
+            404
+          </span>
+          <span className="h-px w-7 bg-border-strong" aria-hidden />
+          <span className="label">Not found</span>
+        </div>
+
+        <h1 className="font-display text-[2.5rem] leading-[1.05] tracking-[-0.015em] sm:text-5xl">
+          This route wandered off the{" "}
+          <em className="italic text-primary">request path.</em>
         </h1>
-        <p className="mt-3 max-w-md text-muted-foreground">
-          The route you&apos;re looking for doesn&apos;t exist, or it moved. Let&apos;s get you back on track.
+
+        <p className="text-pretty leading-relaxed text-muted">
+          The page you&apos;re looking for doesn&apos;t exist, or it moved somewhere else.
         </p>
-        <Button asChild size="lg" className="mt-8">
+
+        <Button asChild size="lg" className="mt-2">
           <Link href="/">
-            <Home className="h-4 w-4" />
-            Back to Home
+            <ArrowLeft />
+            Back home
           </Link>
         </Button>
       </div>

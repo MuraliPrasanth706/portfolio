@@ -1,124 +1,149 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import { ArrowDown, Download, MessageSquare } from "lucide-react";
-import { hero, profile } from "@/data/resume";
+import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { hero, profile, heroSpec, experience } from "@/data/resume";
 import { Button } from "@/components/ui/button";
 import { Magnetic } from "@/components/ui/magnetic-button";
 import { TypingText } from "@/components/ui/typing-text";
-import { BlobField, GridBackground } from "@/components/ui/animated-background";
+import { RuleGrid } from "@/components/ui/animated-background";
 import { GithubIcon, LeetcodeIcon } from "@/components/icons/social";
 
-const ParticleField = dynamic(
-  () => import("@/components/three/particle-field").then((m) => m.ParticleField),
-  { ssr: false }
-);
+const ease = [0.21, 0.47, 0.32, 0.98] as const;
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden pt-28">
-      <GridBackground />
-      <BlobField />
-      <div className="absolute inset-0 opacity-70">
-        <ParticleField />
+    <section className="relative flex min-h-screen items-center overflow-hidden pt-28 pb-24">
+      <RuleGrid />
+
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col gap-16 px-6 lg:flex-row lg:items-center lg:gap-24">
+        <div className="flex max-w-2xl flex-col gap-8">
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease }}
+            className="flex items-center gap-3"
+          >
+            <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-primary uppercase">
+              01
+            </span>
+            <span className="h-px w-7 bg-border-strong" aria-hidden />
+            <span className="label">
+              {profile.title} · {experience[0].company}
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.08, ease }}
+            className="font-display text-[3rem] leading-[0.98] tracking-[-0.015em] sm:text-[4rem] lg:text-[5rem]"
+          >
+            {hero.headlineLead}
+            <br />
+            <em className="italic text-primary">{hero.headlineAccent}</em>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.18, ease }}
+            className="max-w-xl text-pretty text-[1.0625rem] leading-relaxed text-muted"
+          >
+            {hero.subheading}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.28, ease }}
+            className="h-6 font-mono text-sm text-primary"
+          >
+            <TypingText words={hero.roles} />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.36, ease }}
+            className="flex flex-wrap items-center gap-3 pt-2"
+          >
+            <Magnetic>
+              <Button size="lg" asChild>
+                <a href={profile.resumeFile} target="_blank" rel="noopener noreferrer">
+                  <Download />
+                  Résumé
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button size="lg" variant="outline" asChild>
+                <a href={profile.github} target="_blank" rel="noopener noreferrer">
+                  <GithubIcon />
+                  GitHub
+                  <ArrowUpRight />
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button size="lg" variant="outline" asChild>
+                <a href={profile.leetcode} target="_blank" rel="noopener noreferrer">
+                  <LeetcodeIcon />
+                  LeetCode
+                  <ArrowUpRight />
+                </a>
+              </Button>
+            </Magnetic>
+          </motion.div>
+        </div>
+
+        {/* Spec table — the profile as a typeset data sheet. */}
+        <motion.dl
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.24, ease }}
+          className="w-full shrink-0 lg:w-[22rem]"
+        >
+          <div className="flex items-baseline justify-between pb-3.5">
+            <span className="label text-dim">Profile</span>
+            <span className="label text-dim">2026</span>
+          </div>
+          {heroSpec.map((row) => (
+            <div
+              key={row.label}
+              className="flex gap-5 border-t border-border-subtle py-3.5 last:border-b"
+            >
+              <dt className="w-[4.25rem] shrink-0 pt-[3px] font-mono text-[0.625rem] tracking-[0.16em] text-muted-foreground uppercase">
+                {row.label}
+              </dt>
+              <dd className="text-sm text-foreground">
+                {row.status ? (
+                  <span className="flex items-center gap-2.5">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
+                      <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary" />
+                    </span>
+                    {row.value}
+                  </span>
+                ) : (
+                  row.value
+                )}
+              </dd>
+            </div>
+          ))}
+        </motion.dl>
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/40 to-background" />
 
-      <div className="relative z-10 mx-auto flex max-w-5xl flex-col items-center px-6 text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-border-subtle bg-surface/80 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur"
-        >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-success opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-success" />
-          </span>
-          Open to new opportunities · {profile.location}
-        </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-balance text-4xl font-bold leading-[1.08] tracking-tight sm:text-6xl md:text-7xl"
-        >
-          {hero.headline.split(" for Millions.")[0]}
-          <br />
-          <span className="text-gradient">for Millions.</span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-          className="mt-6 max-w-2xl text-balance text-lg text-muted-foreground sm:text-xl"
-        >
-          {hero.subheading}
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
-          className="mt-4 h-7 font-mono text-sm text-primary sm:text-base"
-        >
-          <TypingText words={hero.roles} />
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4"
-        >
-          <Magnetic>
-            <Button size="lg" asChild>
-              <a href={profile.resumeFile} target="_blank" rel="noopener noreferrer">
-                <Download className="h-4 w-4" />
-                Download Resume
-              </a>
-            </Button>
-          </Magnetic>
-          <Magnetic>
-            <Button size="lg" variant="outline" asChild>
-              <a href={profile.github} target="_blank" rel="noopener noreferrer">
-                <GithubIcon className="h-4 w-4" />
-                View GitHub
-              </a>
-            </Button>
-          </Magnetic>
-          <Magnetic>
-            <Button size="lg" variant="outline" asChild>
-              <a href={profile.leetcode} target="_blank" rel="noopener noreferrer">
-                <LeetcodeIcon className="h-4 w-4" />
-                LeetCode
-              </a>
-            </Button>
-          </Magnetic>
-          <Magnetic>
-            <Button size="lg" variant="secondary" asChild>
-              <a href="#contact">
-                <MessageSquare className="h-4 w-4" />
-                Let&apos;s Connect
-              </a>
-            </Button>
-          </Magnetic>
-        </motion.div>
-
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="focus-ring absolute -bottom-16 left-1/2 -translate-x-1/2 rounded-full p-2 text-muted-foreground animate-float"
-          aria-label="Scroll to About section"
-        >
-          <ArrowDown className="h-5 w-5" />
-        </motion.a>
-      </div>
+      <motion.a
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="focus-ring absolute bottom-8 left-1/2 hidden -translate-x-1/2 animate-float rounded-full p-2 text-dim transition-colors hover:text-foreground sm:block"
+        aria-label="Scroll to the About section"
+      >
+        <ArrowDown className="h-4 w-4" />
+      </motion.a>
     </section>
   );
 }

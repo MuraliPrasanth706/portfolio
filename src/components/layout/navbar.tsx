@@ -15,7 +15,7 @@ export function Navbar() {
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 20);
+      setScrolled(window.scrollY > 16);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -33,53 +33,48 @@ export function Navbar() {
     <header
       id="top"
       className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
-        scrolled ? "py-3" : "py-5"
+        "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
+        scrolled
+          ? "border-border-subtle bg-background/85 backdrop-blur-md"
+          : "border-transparent bg-transparent"
       )}
     >
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <nav
-          className={cn(
-            "flex items-center justify-between rounded-2xl px-4 py-2.5 transition-all duration-300",
-            scrolled ? "glass shadow-lg shadow-black/10" : "border border-transparent"
-          )}
-        >
-          <a
-            href="#top"
-            className="focus-ring font-display text-lg font-semibold tracking-tight"
-          >
-            Murali<span className="text-primary">.</span>
-          </a>
+      <div className="mx-auto flex h-[4.75rem] max-w-6xl items-center justify-between gap-8 px-6">
+        <a href="#top" className="focus-ring flex items-center gap-3.5">
+          <span className="h-[7px] w-[7px] rounded-full bg-primary" aria-hidden />
+          <span className="font-mono text-[0.6875rem] tracking-[0.2em] whitespace-nowrap uppercase">
+            {profile.shortName}
+          </span>
+        </a>
 
-          <div className="hidden items-center gap-1 md:flex">
+        <div className="flex items-center gap-6">
+          <nav className="hidden items-center gap-7 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="focus-ring rounded-full px-3.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-surface-hover hover:text-foreground"
+                className="focus-ring font-mono text-[0.6875rem] tracking-[0.14em] whitespace-nowrap text-muted-foreground uppercase transition-colors hover:text-foreground"
               >
                 {link.label}
               </a>
             ))}
-          </div>
+          </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             <CommandPalette />
             <ThemeToggle />
-            <Button asChild size="sm" className="hidden sm:inline-flex">
-              <a href="#contact">Let&apos;s Connect</a>
-            </Button>
             <Button
               variant="ghost"
               size="icon"
               className="md:hidden"
-              aria-label="Toggle menu"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((o) => !o)}
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
-        </nav>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -88,30 +83,28 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25 }}
-            className="mx-4 mt-2 overflow-hidden rounded-2xl md:hidden"
+            transition={{ duration: 0.22 }}
+            className="overflow-hidden border-t border-border-subtle bg-background md:hidden"
           >
-            <div className="glass flex flex-col gap-1 p-3">
+            <nav className="flex flex-col px-6 py-2">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="focus-ring rounded-xl px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-hover"
+                  className="focus-ring border-b border-border-subtle py-4 font-mono text-[0.75rem] tracking-[0.14em] uppercase last:border-b-0"
                 >
                   {link.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                onClick={() => setMobileOpen(false)}
-                className="mt-1 rounded-xl bg-primary px-4 py-3 text-center text-sm font-medium text-primary-foreground"
-              >
-                Let&apos;s Connect
-              </a>
-              <div className="flex items-center justify-between px-2 pt-2 text-xs text-muted-foreground">
-                <span>{profile.location}</span>
-              </div>
+            </nav>
+            <div className="flex items-center justify-between px-6 pb-5 pt-2">
+              <span className="label text-dim">{profile.location}</span>
+              <Button size="sm" asChild>
+                <a href="#contact" onClick={() => setMobileOpen(false)}>
+                  Let&apos;s connect
+                </a>
+              </Button>
             </div>
           </motion.div>
         )}

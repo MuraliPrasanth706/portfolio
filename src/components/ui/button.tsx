@@ -4,21 +4,22 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "focus-ring inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium transition-all duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 cursor-pointer",
+  "focus-ring inline-flex cursor-pointer items-center justify-center gap-2.5 whitespace-nowrap rounded-lg text-sm font-medium transition-colors duration-200 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-[0_0_0_1px_rgba(255,255,255,0.06)] hover:shadow-[0_0_30px_-5px_hsl(var(--primary)/0.6)] hover:brightness-110",
+          "bg-primary font-semibold text-primary-foreground hover:brightness-110",
         outline:
-          "border border-border-subtle bg-transparent hover:bg-surface-hover hover:border-muted-foreground/40",
-        ghost: "hover:bg-surface-hover",
-        secondary: "bg-surface text-foreground hover:bg-surface-hover border border-border-subtle",
+          "border border-border-strong bg-transparent text-foreground hover:border-dim hover:bg-surface-hover",
+        ghost: "text-muted hover:bg-surface-hover hover:text-foreground",
+        secondary:
+          "border border-border-subtle bg-surface text-foreground hover:bg-surface-hover",
       },
       size: {
-        default: "h-11 px-6 py-2",
-        sm: "h-9 px-4 text-xs",
-        lg: "h-13 px-8 text-base",
+        default: "h-11 px-5",
+        sm: "h-9 px-3.5 text-xs",
+        lg: "h-12 px-6 text-[0.9375rem]",
         icon: "h-10 w-10",
       },
     },

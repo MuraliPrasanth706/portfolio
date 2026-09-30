@@ -2,65 +2,63 @@ import { experience } from "@/data/resume";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Badge } from "@/components/ui/badge";
-import { Briefcase, MapPin } from "lucide-react";
 
 export function Experience() {
   return (
     <section id="experience" className="relative py-28 sm:py-36">
-      <div className="mx-auto max-w-4xl px-6">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          eyebrow="Career"
-          title="Experience"
-          description="Where I've built, broken, fixed, and shipped."
+          index="03"
+          eyebrow="Experience"
+          title="Two companies,"
+          accent="five systems."
+          aside="Feb 2023 — Present"
+          className="mb-16"
         />
 
-        <div className="relative">
-          <div className="absolute left-[19px] top-2 bottom-2 hidden w-px bg-gradient-to-b from-primary/60 via-border-subtle to-transparent sm:block" />
+        <div className="flex flex-col gap-14">
+          {experience.map((entry, i) => (
+            <Reveal key={entry.company} delay={i * 0.08}>
+              <article className="grid gap-6 sm:grid-cols-[10rem_1fr] sm:gap-12">
+                <header className="flex flex-col gap-1.5 pt-1">
+                  <span
+                    className={
+                      i === 0
+                        ? "font-mono text-[0.6875rem] leading-relaxed tracking-[0.14em] text-primary uppercase"
+                        : "font-mono text-[0.6875rem] leading-relaxed tracking-[0.14em] text-muted uppercase"
+                    }
+                  >
+                    {entry.duration}
+                  </span>
+                  <span className="font-mono text-[0.625rem] tracking-[0.12em] text-dim uppercase">
+                    {entry.location}
+                  </span>
+                </header>
 
-          <div className="space-y-14">
-            {experience.map((entry, i) => (
-              <Reveal key={entry.company} delay={i * 0.1}>
-                <div className="relative sm:pl-14">
-                  <div className="absolute left-0 top-1 hidden h-10 w-10 items-center justify-center rounded-full border border-primary/40 bg-surface text-primary sm:flex">
-                    <Briefcase className="h-4 w-4" />
+                <div className="flex flex-col gap-7 border-t border-border-strong pt-6">
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
+                    <h3 className="font-display text-[1.75rem] leading-tight">
+                      {entry.company}
+                    </h3>
+                    <span className="text-sm text-muted-foreground">{entry.role}</span>
                   </div>
 
-                  <div className="rounded-2xl border border-border-subtle bg-surface/50 p-6 sm:p-8">
-                    <div className="mb-6 flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
-                      <div>
-                        <h3 className="font-display text-xl font-semibold">{entry.role}</h3>
-                        <p className="text-primary">{entry.company}</p>
-                      </div>
-                      <div className="flex flex-col gap-1 text-sm text-muted-foreground sm:items-end">
-                        <span>{entry.duration}</span>
-                        <span className="flex items-center gap-1.5">
-                          <MapPin className="h-3.5 w-3.5" />
-                          {entry.location}
-                        </span>
-                      </div>
+                  {entry.projects.map((project) => (
+                    <div key={project.name} className="flex flex-col gap-3">
+                      <h4 className="text-base font-semibold">{project.name}</h4>
+                      <ul className="flex flex-wrap gap-1.5">
+                        {project.highlights.map((highlight) => (
+                          <li key={highlight}>
+                            <Badge>{highlight}</Badge>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-
-                    <div className="space-y-6">
-                      {entry.projects.map((project) => (
-                        <div key={project.name}>
-                          <h4 className="mb-2.5 text-sm font-semibold uppercase tracking-wider text-foreground/80">
-                            {project.name}
-                          </h4>
-                          <div className="flex flex-wrap gap-2">
-                            {project.highlights.map((h) => (
-                              <Badge key={h} variant="default">
-                                {h}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              </Reveal>
-            ))}
-          </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

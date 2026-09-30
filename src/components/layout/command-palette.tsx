@@ -121,7 +121,7 @@ export function CommandPalette() {
         >
           <div onClick={(e) => e.stopPropagation()} className="w-full max-w-lg">
             <Command
-              className="glass overflow-hidden rounded-2xl shadow-2xl"
+              className="overflow-hidden rounded-xl border border-border-strong bg-surface shadow-2xl shadow-black/40"
               label="Command Palette"
             >
               <Command.Input

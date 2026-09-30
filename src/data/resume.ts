@@ -18,18 +18,30 @@ export const profile = {
 } as const;
 
 export const hero = {
-  headline: "Building Scalable Software for Millions.",
+  /** Split so the second line can carry the one italic ember emphasis. */
+  headlineLead: "Between the interface",
+  headlineAccent: "and the infrastructure.",
   subheading:
-    "Software Engineer specializing in Backend Engineering, AI-powered applications, Java, Spring Boot, Node.js, React, and scalable cloud architectures.",
+    "I design multi-tenant systems end to end — REST contracts, access-control models, caching, and the re-platforms that retire the framework everyone is afraid to touch.",
   roles: [
     "Backend Engineer",
     "Java & Spring Boot",
     "Node.js & TypeScript",
     "React & Next.js",
-    "Scalable API Developer",
+    "Multi-tenant RBAC",
     "Full Stack Engineer",
   ],
 };
+
+/** The profile rendered as a typeset spec table beside the headline. */
+export const heroSpec: Array<{ label: string; value: string; status?: boolean }> = [
+  { label: "Base", value: "Bangalore, India" },
+  { label: "Exp", value: "3.6 years, product companies" },
+  { label: "Core", value: "Node.js · React · TypeScript" },
+  { label: "Also", value: "Java · Spring Boot · MySQL · Redis" },
+  { label: "Now", value: "Localization platform, multi-tenant SaaS" },
+  { label: "Status", value: "Open to new roles", status: true },
+];
 
 export const about = {
   paragraphs: [
@@ -235,12 +247,16 @@ export const projects: Project[] = [
   },
 ];
 
+/**
+ * Numbers that came off real, attributable work — each one traceable to a
+ * project below, rather than an unverifiable headcount.
+ */
 export const achievements = [
-  { value: "3.6+", label: "Years Experience" },
-  { value: "50+", label: "Production Features Delivered" },
-  { value: "10+", label: "Enterprise Modules Built" },
-  { value: "4+", label: "Large Scale Products" },
-  { value: "1000s", label: "Users Supported" },
+  { value: "3.6", label: "years shipping production SaaS" },
+  { value: "30%", label: "smaller JS bundle — Pricing Studio" },
+  { value: "6", label: "billing modules re-platformed off GWT" },
+  { value: "2", label: "frontend re-platforms owned end to end" },
+  { value: "10–15%", label: "faster ticket search — Service Desk" },
 ];
 
 export const skills = [

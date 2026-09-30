@@ -1,18 +1,32 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, MapPin, Download, Check, Copy } from "lucide-react";
+import { ArrowUpRight, Check, Copy, Download, MapPin } from "lucide-react";
 import { profile } from "@/data/resume";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
-import { BlobField } from "@/components/ui/animated-background";
 import { GithubIcon, LinkedinIcon, LeetcodeIcon } from "@/components/icons/social";
 
 const links = [
-  { label: "GitHub", value: `@${profile.githubUsername}`, href: profile.github, icon: GithubIcon },
-  { label: "LinkedIn", value: profile.name, href: profile.linkedin, icon: LinkedinIcon },
-  { label: "LeetCode", value: `@${profile.leetcodeUsername}`, href: profile.leetcode, icon: LeetcodeIcon },
+  {
+    label: "GitHub",
+    value: `@${profile.githubUsername}`,
+    href: profile.github,
+    icon: GithubIcon,
+  },
+  {
+    label: "LinkedIn",
+    value: profile.name,
+    href: profile.linkedin,
+    icon: LinkedinIcon,
+  },
+  {
+    label: "LeetCode",
+    value: `@${profile.leetcodeUsername}`,
+    href: profile.leetcode,
+    icon: LeetcodeIcon,
+  },
 ];
 
 export function Contact() {
@@ -25,57 +39,63 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden py-28 sm:py-36">
-      <BlobField className="opacity-60" />
-      <div className="relative mx-auto max-w-3xl px-6">
+    <section id="contact" className="relative py-28 sm:py-36">
+      <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
+          index="11"
           eyebrow="Contact"
-          title="Let's build something."
-          description="Open to backend-heavy, full-stack, or AI platform roles — and always happy to talk shop."
+          title="Let's talk about the layer"
+          accent="in the middle."
+          description="Open to full-stack and backend-leaning roles — and always happy to talk shop."
+          className="mb-16"
         />
 
-        <Reveal className="glass rounded-3xl p-8 sm:p-10">
-          <div className="mb-8 flex flex-col items-center gap-2 text-center">
-            <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-              <Mail className="h-6 w-6" />
-            </span>
-            <p className="font-display text-xl font-semibold">{profile.email}</p>
-            <p className="flex items-center gap-1.5 text-sm text-muted-foreground">
-              <MapPin className="h-3.5 w-3.5" />
-              {profile.location}
-            </p>
-          </div>
+        <Reveal className="flex flex-col gap-10 border-t border-border-strong pt-12">
+          <a
+            href={`mailto:${profile.email}`}
+            className="focus-ring font-display text-[2rem] leading-tight tracking-[-0.01em] transition-colors hover:text-primary sm:text-[3rem]"
+          >
+            {profile.email}
+          </a>
 
-          <div className="mb-8 flex flex-wrap justify-center gap-3">
-            <Button onClick={copyEmail} variant="secondary">
-              {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-              {copied ? "Copied!" : "Copy Email"}
+          <div className="flex flex-wrap items-center gap-3">
+            <Button onClick={copyEmail} variant="outline">
+              {copied ? <Check /> : <Copy />}
+              {copied ? "Copied" : "Copy email"}
             </Button>
             <Button asChild>
               <a href={profile.resumeFile} target="_blank" rel="noopener noreferrer">
-                <Download className="h-4 w-4" />
-                Download Resume
+                <Download />
+                Download résumé
               </a>
             </Button>
+            <span className="ml-1 flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="h-3.5 w-3.5" />
+              {profile.location}
+            </span>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <ul className="grid gap-px overflow-hidden rounded-xl border border-border-subtle bg-border-subtle sm:grid-cols-3">
             {links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="focus-ring flex items-center gap-3 rounded-xl border border-border-subtle bg-surface/60 p-4 transition-colors hover:border-primary/40 hover:bg-surface-hover"
-              >
-                <link.icon className="h-4 w-4 text-primary" />
-                <div className="min-w-0">
-                  <p className="text-xs text-muted-foreground">{link.label}</p>
-                  <p className="truncate text-sm font-medium">{link.value}</p>
-                </div>
-              </a>
+              <li key={link.label} className="bg-background">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="focus-ring group flex h-full items-center justify-between gap-4 p-6 transition-colors hover:bg-surface"
+                >
+                  <span className="flex min-w-0 items-center gap-4">
+                    <link.icon className="h-4 w-4 shrink-0 text-primary" />
+                    <span className="flex min-w-0 flex-col gap-1">
+                      <span className="label text-dim">{link.label}</span>
+                      <span className="truncate text-sm">{link.value}</span>
+                    </span>
+                  </span>
+                  <ArrowUpRight className="h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+                </a>
+              </li>
             ))}
-          </div>
+          </ul>
         </Reveal>
       </div>
     </section>

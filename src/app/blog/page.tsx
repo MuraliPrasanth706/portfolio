@@ -1,32 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, PenLine } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { BlobField, GridBackground } from "@/components/ui/animated-background";
+import { RuleGrid } from "@/components/ui/animated-background";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Writing on backend engineering, AI systems, and scalable architecture — coming soon.",
+  description:
+    "Writing on backend architecture, multi-tenant systems and scalable API design — coming soon.",
 };
 
 export default function BlogPage() {
   return (
-    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 text-center">
-      <GridBackground />
-      <BlobField />
-      <div className="relative z-10 flex flex-col items-center">
-        <span className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-          <PenLine className="h-6 w-6" />
-        </span>
-        <h1 className="font-display text-3xl font-semibold sm:text-4xl">Writing, coming soon.</h1>
-        <p className="mt-3 max-w-md text-muted-foreground">
-          Notes on backend architecture, AI pipelines, and lessons from shipping production
-          systems — in progress.
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+      <RuleGrid />
+      <div className="relative z-10 flex max-w-md flex-col items-start gap-6">
+        <div className="flex items-center gap-3">
+          <span className="font-mono text-[0.6875rem] tracking-[0.18em] text-primary uppercase">
+            Soon
+          </span>
+          <span className="h-px w-7 bg-border-strong" aria-hidden />
+          <span className="label">Writing</span>
+        </div>
+
+        <h1 className="font-display text-[2.5rem] leading-[1.05] tracking-[-0.015em] sm:text-5xl">
+          Notes on the systems,{" "}
+          <em className="italic text-primary">in progress.</em>
+        </h1>
+
+        <p className="text-pretty leading-relaxed text-muted">
+          Backend architecture, multi-tenant boundaries, caching strategy, and what
+          actually broke on the way to production.
         </p>
-        <Button asChild variant="outline" className="mt-8">
+
+        <Button asChild variant="outline" className="mt-2">
           <Link href="/">
-            <ArrowLeft className="h-4 w-4" />
-            Back to Home
+            <ArrowLeft />
+            Back home
           </Link>
         </Button>
       </div>

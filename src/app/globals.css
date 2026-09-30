@@ -2,35 +2,47 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/*
+ * Design system — "technical broadsheet"
+ * Warm near-black ground, Instrument Serif display, JetBrains Mono labels,
+ * a single ember accent, hairline rules instead of heavy card chrome.
+ */
 :root {
-  --background: 210 40% 6%;
-  --foreground: 210 20% 96%;
+  --background: 240 4% 5%;
+  --foreground: 40 20% 94%;
 
-  --surface: 217 33% 9%;
-  --surface-hover: 217 30% 12%;
-  --border-subtle: 217 25% 18%;
+  --surface: 240 3% 6%;
+  --surface-hover: 240 6% 10%;
 
-  --primary: 217 91% 60%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 258 90% 66%;
-  --success: 160 84% 39%;
+  --border-subtle: 240 5% 12%;
+  --border-strong: 240 5% 18%;
 
-  --muted: 215 20% 65%;
-  --muted-foreground: 215 16% 47%;
+  --primary: 13 74% 56%;
+  --primary-foreground: 240 4% 5%;
 
-  --radius: 0.875rem;
+  --muted: 43 4% 63%;
+  --muted-foreground: 43 3% 53%;
+  --dim: 40 3% 42%;
+
+  --radius: 0.625rem;
 }
 
 .light {
-  --background: 210 40% 98%;
-  --foreground: 222 47% 11%;
+  --background: 42 31% 94%;
+  --foreground: 240 8% 9%;
 
-  --surface: 210 40% 100%;
-  --surface-hover: 210 30% 95%;
-  --border-subtle: 214 32% 88%;
+  --surface: 42 40% 98%;
+  --surface-hover: 42 24% 91%;
 
-  --muted: 215 20% 40%;
-  --muted-foreground: 215 16% 47%;
+  --border-subtle: 41 19% 83%;
+  --border-strong: 41 16% 74%;
+
+  --primary: 15 71% 42%;
+  --primary-foreground: 42 40% 98%;
+
+  --muted: 45 5% 33%;
+  --muted-foreground: 45 4% 44%;
+  --dim: 45 4% 52%;
 }
 
 @theme inline {
@@ -39,43 +51,26 @@
   --color-surface: hsl(var(--surface));
   --color-surface-hover: hsl(var(--surface-hover));
   --color-border-subtle: hsl(var(--border-subtle));
+  --color-border-strong: hsl(var(--border-strong));
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-secondary: hsl(var(--secondary));
-  --color-success: hsl(var(--success));
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-dim: hsl(var(--dim));
 
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-geist);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-instrument-sans);
+  --font-display: var(--font-instrument-serif);
+  --font-mono: var(--font-jetbrains-mono);
 
   --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 4px);
-  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 3px);
+  --radius-sm: calc(var(--radius) - 5px);
 
-  --animate-blob: blob 18s infinite ease-in-out;
   --animate-float: float 6s ease-in-out infinite;
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-shimmer: shimmer 2.5s linear infinite;
 
-  @keyframes blob {
-    0%, 100% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(30px, -40px) scale(1.08); }
-    50% { transform: translate(-20px, 20px) scale(0.95); }
-    75% { transform: translate(20px, 40px) scale(1.05); }
-  }
   @keyframes float {
     0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-14px); }
-  }
-  @keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  @keyframes shimmer {
-    from { background-position: 200% 0; }
-    to { background-position: -200% 0; }
+    50% { transform: translateY(-10px); }
   }
 }
 
@@ -88,6 +83,10 @@ html {
   color-scheme: dark;
 }
 
+.light {
+  color-scheme: light;
+}
+
 body {
   background: hsl(var(--background));
   color: hsl(var(--foreground));
@@ -95,7 +94,7 @@ body {
 }
 
 ::selection {
-  background: hsl(var(--primary) / 0.3);
+  background: hsl(var(--primary) / 0.28);
   color: hsl(var(--foreground));
 }
 
@@ -106,29 +105,29 @@ body {
   background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--border-subtle));
+  background: hsl(var(--border-strong));
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: hsl(var(--dim));
 }
 
-.text-gradient {
-  background: linear-gradient(120deg, hsl(var(--primary)), hsl(var(--secondary)));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+/* Mono metadata label — the recurring typographic device of this design. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
 }
 
-.glass {
-  background: hsl(var(--surface) / 0.6);
-  backdrop-filter: blur(16px) saturate(160%);
-  -webkit-backdrop-filter: blur(16px) saturate(160%);
-  border: 1px solid hsl(var(--border-subtle) / 0.7);
-}
-
-.grid-fade-mask {
-  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 40%, transparent 100%);
+/* Faint 56px rule grid, masked so it fades out away from the top. */
+.rule-grid {
+  background-image:
+    linear-gradient(to right, hsl(var(--border-subtle) / 0.55) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--border-subtle) / 0.55) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 55% at 50% 0%, black 30%, transparent 100%);
 }
 
 .focus-ring {
@@ -137,5 +136,18 @@ body {
 .focus-ring:focus-visible {
   outline: 2px solid hsl(var(--primary));
   outline-offset: 3px;
-  border-radius: 6px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
