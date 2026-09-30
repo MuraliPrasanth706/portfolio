@@ -259,19 +259,6 @@ export const achievements = [
   { value: "10–15%", label: "faster ticket search — Service Desk" },
 ];
 
-export const skills = [
-  { name: "Backend", value: 95 },
-  { name: "React", value: 90 },
-  { name: "Java", value: 90 },
-  { name: "Node.js", value: 95 },
-  { name: "Spring Boot", value: 83 },
-  { name: "System Design", value: 85 },
-  { name: "Databases", value: 90 },
-  { name: "Redis", value: 88 },
-  { name: "Microservices", value: 85 },
-  { name: "Micro Frontend", value: 80 },
-];
-
 export const education = {
   degree: "Bachelor of Technology",
   field: "Information Technology",

@@ -14,7 +14,7 @@ export function GithubSection() {
     <section id="github" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="08"
+          index="07"
           eyebrow="Open source"
           title="Contribution"
           accent="activity."

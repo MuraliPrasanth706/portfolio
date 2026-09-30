@@ -36,7 +36,7 @@ export function LeetcodeSection() {
     <section id="leetcode" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="09"
+          index="08"
           eyebrow="Problem solving"
           title="Kept sharp,"
           accent="deliberately."

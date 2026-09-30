@@ -7,7 +7,6 @@ import { Experience } from "@/components/sections/experience";
 import { Projects } from "@/components/sections/projects";
 import { BuildingProduct } from "@/components/sections/building-product";
 import { Achievements } from "@/components/sections/achievements";
-import { Skills } from "@/components/sections/skills";
 import { GithubSection } from "@/components/sections/github";
 import { LeetcodeSection } from "@/components/sections/leetcode";
 import { Timeline } from "@/components/sections/timeline";
@@ -25,7 +24,6 @@ export default function Home() {
         <Projects />
         <BuildingProduct />
         <Achievements />
-        <Skills />
         <GithubSection />
         <LeetcodeSection />
         <Timeline />

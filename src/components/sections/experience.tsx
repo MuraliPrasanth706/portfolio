@@ -8,7 +8,7 @@ export function Experience() {
     <section id="experience" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="03"
+          index="04"
           eyebrow="Experience"
           title="Two companies,"
           accent="five systems."

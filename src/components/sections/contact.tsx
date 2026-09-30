@@ -42,7 +42,7 @@ export function Contact() {
     <section id="contact" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="11"
+          index="10"
           eyebrow="Contact"
           title="Let's talk about the layer"
           accent="in the middle."

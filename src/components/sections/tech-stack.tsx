@@ -7,7 +7,7 @@ export function TechStack() {
     <section id="stack" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="04"
+          index="03"
           eyebrow="Toolbox"
           title="What I reach for,"
           accent="and why."

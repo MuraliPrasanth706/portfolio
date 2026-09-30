@@ -9,7 +9,7 @@ export function BuildingProduct() {
     <section id="building" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="07"
+          index="06"
           eyebrow="Upcoming"
           title="Building"
           accent="in public."

@@ -7,7 +7,7 @@ export function Timeline() {
     <section id="timeline" className="relative py-28 sm:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <SectionHeading
-          index="10"
+          index="09"
           eyebrow="Journey"
           title="How it"
           accent="ran."
