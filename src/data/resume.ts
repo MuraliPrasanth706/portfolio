@@ -5,7 +5,7 @@ export const profile = {
   tagline:
     "Building scalable backend systems, AI-powered platforms, and modern web applications.",
   location: "Bangalore, India",
-  experienceYears: "3.6+",
+  experienceYears: "4+",
   email: "muraliprasanth706@gmail.com",
   phone: "+91 90254 65713",
   github: "https://github.com/MuraliPrasanth706",
@@ -36,7 +36,7 @@ export const hero = {
 /** The profile rendered as a typeset spec table beside the headline. */
 export const heroSpec: Array<{ label: string; value: string; status?: boolean }> = [
   { label: "Base", value: "Bangalore, India" },
-  { label: "Exp", value: "3.6 years, product companies" },
+  { label: "Exp", value: "4 years, product companies" },
   { label: "Core", value: "Node.js · React · TypeScript" },
   { label: "Also", value: "Java · Spring Boot · MySQL · Redis" },
   { label: "Now", value: "Localization platform, multi-tenant SaaS" },
@@ -45,13 +45,13 @@ export const heroSpec: Array<{ label: string; value: string; status?: boolean }>
 
 export const about = {
   paragraphs: [
-    "I'm a Software Engineer II with 3.6+ years building production software that carries real weight — multi-tenant SaaS platforms, AI document-processing pipelines, and billing systems that thousands of users touch every day. I care less about which framework is trendy and more about whether the system still holds up under load, under edge cases, and under a new engineer reading it six months later.",
+    "I'm a Software Engineer II with 4+ years building production software that carries real weight — multi-tenant SaaS platforms, AI document-processing pipelines, and billing systems that thousands of users touch every day. I care less about which framework is trendy and more about whether the system still holds up under load, under edge cases, and under a new engineer reading it six months later.",
     "At Incresco Technology, I design Role-Based Access Control and multi-tenant permission models for APEX (NP360) on a Java and Spring Boot backend, and build an AI-powered document extraction platform that runs resumes, IDs, certificates, payslips, and bank statements through a modular multi-agent pipeline — OpenCV preprocessing, async orchestration, and validation baked in end to end. Before that, at OneBill, I helped migrate core billing modules off legacy GWT into React, rebuilt authentication as a Node.js BFF layer with JWT, and shipped a cross-platform React Native service desk app used by real support teams.",
     "My stack runs deep on both sides: Java with Spring Boot and Node.js for services, React and Next.js for interfaces, Redis for the caching layer that keeps things fast, and PostgreSQL/MongoDB underneath. I'm drawn to the unglamorous parts of engineering — API contracts, caching strategy, permission boundaries, performance budgets — because that's where scalable systems are actually won or lost.",
     "Outside of ticket queues, I like compressing an MVP into days rather than weeks using AI-assisted development, and I'm always looking for the next system worth building properly.",
   ],
   highlights: [
-    "3.6+ years shipping production SaaS",
+    "4+ years shipping production SaaS",
     "AI document processing at scale",
     "Full-stack, backend-leaning",
     "Performance & caching focused",
@@ -252,7 +252,7 @@ export const projects: Project[] = [
  * project below, rather than an unverifiable headcount.
  */
 export const achievements = [
-  { value: "3.6", label: "years shipping production SaaS" },
+  { value: "4", label: "years shipping production SaaS" },
   { value: "30%", label: "smaller JS bundle — Pricing Studio" },
   { value: "6", label: "billing modules re-platformed off GWT" },
   { value: "2", label: "frontend re-platforms owned end to end" },
