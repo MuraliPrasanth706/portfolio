@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/data/resume";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Badge } from "@/components/ui/badge";
@@ -77,7 +78,19 @@ export function Projects() {
                 </div>
 
                 <h3 className="font-display text-[1.625rem] leading-tight">
-                  {project.title}
+                  {project.link ? (
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="focus-ring inline-flex items-start gap-1.5 transition-colors hover:text-primary"
+                    >
+                      {project.title}
+                      <ArrowUpRight className="mt-1.5 h-4 w-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary" />
+                    </a>
+                  ) : (
+                    project.title
+                  )}
                 </h3>
 
                 <p className="flex-grow text-sm leading-relaxed text-muted">

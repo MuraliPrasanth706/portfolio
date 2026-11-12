@@ -1,4 +1,4 @@
-import { ArrowUpRight, Lock, Rocket } from "lucide-react";
+import { ArrowUpRight, Rocket } from "lucide-react";
 import { buildingSection, buildingProducts } from "@/data/resume";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
@@ -23,11 +23,7 @@ export function BuildingProduct() {
               <article className="flex h-full flex-col gap-5 rounded-xl border border-border-subtle bg-surface p-8">
                 <div className="flex items-center justify-between">
                   <span className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-strong text-primary">
-                    {item.link ? (
-                      <Rocket className="h-4 w-4" />
-                    ) : (
-                      <Lock className="h-4 w-4" />
-                    )}
+                    <Rocket className="h-4 w-4" />
                   </span>
                   <span className="label text-dim">{item.name ?? "Stealth product"}</span>
                 </div>

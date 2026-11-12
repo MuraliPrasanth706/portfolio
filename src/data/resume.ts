@@ -3,9 +3,9 @@ export const profile = {
   shortName: "Murali Prasanth",
   title: "Software Engineer II",
   tagline:
-    "Building scalable backend systems, AI-powered platforms, and modern web applications.",
-  location: "Bangalore, India",
-  experienceYears: "4+",
+    "Full-stack engineer building multi-tenant SaaS across React, TypeScript, Node.js and Java.",
+  location: "Bengaluru, India",
+  experienceYears: "4",
   email: "muraliprasanth706@gmail.com",
   phone: "+91 90254 65713",
   github: "https://github.com/MuraliPrasanth706",
@@ -14,7 +14,7 @@ export const profile = {
     "https://www.linkedin.com/in/murali-prasanth-ponnusamy-640bb8210/",
   leetcode: "https://leetcode.com/u/MuraliPrasanth706/",
   leetcodeUsername: "MuraliPrasanth706",
-  resumeFile: "/resume/Murali_Prasanth_FullStack.pdf",
+  resumeFile: "/resume/Murali_Prasanth_SDE2_Resume.pdf",
 } as const;
 
 export const hero = {
@@ -22,39 +22,39 @@ export const hero = {
   headlineLead: "Between the interface",
   headlineAccent: "and the infrastructure.",
   subheading:
-    "I design multi-tenant systems end to end — REST contracts, access-control models, caching, and the re-platforms that retire the framework everyone is afraid to touch.",
+    "Full-stack engineer on multi-tenant SaaS. React and TypeScript on the front, Node.js and Java behind it — and an AI document pipeline that has processed over a thousand real applications.",
   roles: [
-    "Backend Engineer",
+    "React & TypeScript",
+    "Node.js & Express",
     "Java & Spring Boot",
-    "Node.js & TypeScript",
-    "React & Next.js",
-    "Multi-tenant RBAC",
+    "AI document pipelines",
+    "Kafka & Redis",
     "Full Stack Engineer",
   ],
 };
 
 /** The profile rendered as a typeset spec table beside the headline. */
 export const heroSpec: Array<{ label: string; value: string; status?: boolean }> = [
-  { label: "Base", value: "Bangalore, India" },
-  { label: "Exp", value: "4 years, product companies" },
-  { label: "Core", value: "Node.js · React · TypeScript" },
-  { label: "Also", value: "Java · Spring Boot · MySQL · Redis" },
-  { label: "Now", value: "Localization platform, multi-tenant SaaS" },
+  { label: "Base", value: "Bengaluru, India" },
+  { label: "Exp", value: "Almost 4 years, product companies" },
+  { label: "Core", value: "React · TypeScript · Node.js · Java" },
+  { label: "Also", value: "Kafka · Redis · MySQL · AWS" },
+  { label: "Now", value: "AI document processing — GUS Education" },
   { label: "Status", value: "Open to new roles", status: true },
 ];
 
 export const about = {
   paragraphs: [
-    "I'm a Software Engineer II with 4+ years building production software that carries real weight — multi-tenant SaaS platforms, AI document-processing pipelines, and billing systems that thousands of users touch every day. I care less about which framework is trendy and more about whether the system still holds up under load, under edge cases, and under a new engineer reading it six months later.",
-    "At Incresco Technology, I design Role-Based Access Control and multi-tenant permission models for APEX (NP360) on a Java and Spring Boot backend, and build an AI-powered document extraction platform that runs resumes, IDs, certificates, payslips, and bank statements through a modular multi-agent pipeline — OpenCV preprocessing, async orchestration, and validation baked in end to end. Before that, at OneBill, I helped migrate core billing modules off legacy GWT into React, rebuilt authentication as a Node.js BFF layer with JWT, and shipped a cross-platform React Native service desk app used by real support teams.",
-    "My stack runs deep on both sides: Java with Spring Boot and Node.js for services, React and Next.js for interfaces, Redis for the caching layer that keeps things fast, and PostgreSQL/MongoDB underneath. I'm drawn to the unglamorous parts of engineering — API contracts, caching strategy, permission boundaries, performance budgets — because that's where scalable systems are actually won or lost.",
-    "Outside of ticket queues, I like compressing an MVP into days rather than weeks using AI-assisted development, and I'm always looking for the next system worth building properly.",
+    "I'm a full-stack engineer with almost four years on multi-tenant SaaS, working across both halves of the stack: React, TypeScript and Next.js on the front, REST APIs on Node.js and Java behind them, with MySQL, MongoDB and Redis underneath.",
+    "At Incresco I built an AI document-processing platform for GUS Education India. It pulls student applications out of the SIS, extracts document data with OpenAI Vision OCR, routes each application to an admission officer, and writes the result back after review. It has processed over 1,000 production applications at a 98% completion rate, running hourly with no manual data entry — plus a Chrome extension that diffs AI-extracted values against SIS records so an officer sees the mismatches before approving.",
+    "On the same team I own role-based access control for APEX (NP 360) — including a scoped External Organization Editor role that lets outside organizations join approval workflows without administrative or publishing rights — and the Redis caching layer behind high-volume quote listing. Before that, at OneBill, I built and owned a Node.js BFF that gave the React UI one stable contract over downstream Java microservices, led six billing modules off legacy GWT onto React, and built a Kafka-based SLA pipeline for support ticketing.",
+    "I care about the parts that decide whether a system holds: the API contract, the permission boundary, what gets cached, and what happens when the link expires mid-review. I also mentor a junior engineer through code reviews and day-to-day debugging.",
   ],
   highlights: [
-    "4+ years shipping production SaaS",
+    "Almost 4 years shipping production SaaS",
     "AI document processing at scale",
-    "Full-stack, backend-leaning",
-    "Performance & caching focused",
+    "Full-stack, React through Java",
+    "Performance, caching & reliability",
   ],
 };
 
@@ -65,24 +65,36 @@ export type TechCategory = {
 
 export const techStack: TechCategory[] = [
   {
+    title: "Languages",
+    items: ["JavaScript", "TypeScript", "Java"],
+  },
+  {
     title: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind", "React Native"],
+    items: ["React.js", "Next.js", "React Native", "Redux", "HTML5", "CSS3"],
   },
   {
     title: "Backend",
-    items: ["Java", "Spring Boot", "Node.js", "Express", "REST APIs", "gRPC", "Authentication"],
+    items: ["Node.js", "Express.js", "Spring Boot", "Kafka", "REST APIs", "Microservices"],
   },
   {
     title: "Databases",
-    items: ["PostgreSQL", "MongoDB", "Redis", "Caching"],
+    items: ["MySQL", "MongoDB", "Redis"],
   },
   {
-    title: "Architecture",
-    items: ["Microservices", "Modular Architecture", "RBAC", "Multi Tenant", "API Design", "AI Pipelines"],
+    title: "Cloud & DevOps",
+    items: ["AWS", "GitHub Actions", "Git"],
   },
   {
-    title: "DevOps",
-    items: ["Docker", "Linux", "NGINX", "Git", "GitHub", "Postman", "Jira"],
+    title: "Testing",
+    items: ["Jest", "React Testing Library", "Playwright"],
+  },
+  {
+    title: "AI",
+    items: ["OpenAI Vision OCR", "LLM APIs", "Multi-Agent Pipelines", "OpenCV"],
+  },
+  {
+    title: "Tools",
+    items: ["Postman", "JIRA", "Claude Code", "GitHub Copilot"],
   },
 ];
 
@@ -104,51 +116,33 @@ export const experience: ExperienceEntry[] = [
     company: "Incresco Technology",
     role: "Software Engineer II",
     duration: "Mar 2026 — Present",
-    location: "Coimbatore, On-site",
+    location: "Bengaluru, India",
     projects: [
       {
-        name: "Localization & Terminology Configuration Platform",
+        name: "AI Document Processing Platform — GUS Education India",
         highlights: [
-          "Multi Tenant SaaS",
-          "API Driven Localization",
-          "HLD & LLD",
-          "Tenant Specific Terminology",
-          "REST API Design",
-          "Role Scoped Admin Interface",
-          "Runtime Configuration",
-          "Independently Deployable Service",
-          "Zero Redeploy Updates",
+          "OpenAI Vision OCR",
+          "SIS Integration",
+          "1,000+ Applications",
+          "98% Completion",
+          "Hourly Automation",
+          "Round-Robin Assignment",
+          "S3 Link Re-signing",
+          "Playwright Scraping",
+          "Chrome Extension",
+          "21 Document Types",
         ],
       },
       {
-        name: "APEX NP360",
+        name: "APEX (NP 360) — Expert & Quote Management",
         highlights: [
-          "Java",
-          "Spring Boot",
           "Role Based Access Control",
-          "Multi Tenant Permissions",
-          "Expert Management APIs",
+          "Least Privilege Roles",
+          "Approval Workflows",
+          "REST API Design",
           "Redis Caching",
-          "Secure Business Workflows",
-        ],
-      },
-      {
-        name: "AI Candidate Extraction Platform",
-        highlights: [
-          "FastAPI",
-          "AI Document Processing",
-          "OpenCV",
-          "OCR",
-          "Multi Agent Pipeline",
-          "Resume Extraction",
-          "Identity Documents",
-          "Educational Certificates",
-          "Payslips",
-          "Bank Statements",
-          "Async Processing",
-          "SMB Integration",
-          "Validation",
-          "Normalization",
+          "Search · Filter · Pagination",
+          "Mentoring",
         ],
       },
     ],
@@ -157,31 +151,39 @@ export const experience: ExperienceEntry[] = [
     company: "OneBill Software",
     role: "Software Engineer",
     duration: "Feb 2023 — Mar 2026",
-    location: "Bangalore, On-site",
+    location: "Bangalore, India",
     projects: [
       {
-        name: "Pricing Studio",
+        name: "Self-Care & Shopping Cart — Node.js BFF & Authentication",
         highlights: [
-          "Java",
-          "Spring Boot",
-          "React Migration",
-          "Legacy Modernization",
-          "REST APIs",
-          "Performance Optimization",
+          "Node.js BFF Layer",
+          "Express",
+          "JWT & Refresh Tokens",
+          "Unified Auth Abstraction",
+          "Angular to React",
+          "Java Microservices",
         ],
       },
       {
-        name: "Authentication BFF",
-        highlights: ["JWT", "Node.js BFF Layer", "Angular to React Migration"],
+        name: "Pricing Studio — Core Billing Product",
+        highlights: [
+          "6 Modules GWT to React",
+          "30% Smaller Bundle",
+          "Improved TTI",
+          "Context API & Hooks",
+          "RESTful Services",
+          "MySQL",
+        ],
       },
       {
-        name: "React Native Service Desk",
+        name: "Service Desk — Support Ticketing",
         highlights: [
-          "Java",
-          "Spring Boot",
+          "Kafka SLA Pipeline",
+          "MongoDB",
+          "Escalation Workflows",
+          "Dynamic Ticket Tagging",
           "Redis Caching",
-          "TanStack Query",
-          "Offline Sync",
+          "10–15% Faster APIs",
         ],
       },
     ],
@@ -199,64 +201,66 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "Localization & Terminology Configuration Platform",
+    title: "AI Document Processing Platform",
     description:
-      "Centralized, API-driven localization for a multi-tenant SaaS — text labels and field names moved out of hardcoded JavaScript into configuration served to the frontend at runtime. Tenant-specific terminology lets different customers label the same business field differently on one shared frontend codebase, and a role-scoped Admin/Editor interface lets business users manage keys and values without a code change or redeploy.",
-    tags: [
-      "Multi Tenant SaaS",
-      "REST API Design",
-      "HLD & LLD",
-      "RBAC",
-      "Runtime Configuration",
-      "Admin Interface",
-    ],
-    category: "Backend",
-    featured: true,
-  },
-  {
-    title: "AI Candidate Extraction Platform",
-    description:
-      "Modular multi-agent document-processing platform that extracts structured data from resumes, IDs, certificates, payslips, and bank statements using FastAPI, OpenCV preprocessing, and async pipelines.",
-    tags: ["FastAPI", "OpenCV", "Multi Agent AI", "OCR", "REST APIs", "Redis", "Python"],
+      "Pulls student applications from the SIS, extracts document data with OpenAI Vision OCR, routes each one to an admission officer via a MySQL-backed round-robin engine, and writes the result back after review. 1,000+ production applications processed at 98% completion, running hourly with no manual data entry.",
+    tags: ["OpenAI Vision OCR", "Node.js", "MySQL", "Playwright", "AWS S3", "Chrome Extension"],
     category: "AI",
     featured: true,
   },
   {
-    title: "Smart Healthcare Appointment System",
+    title: "APEX (NP 360)",
     description:
-      "Doctor dashboard and patient mobile app with real-time appointment queue tracking and estimated consultation time — full MVP shipped in 3 days using AI-assisted development.",
-    tags: ["React Native", "Node.js", "PostgreSQL", "Doctor Dashboard", "Patient App", "Queue Tracking"],
-    category: "Mobile",
+      "Role-based access control for expert and quote management, including a scoped External Organization Editor role that brings outside organizations into approval workflows without administrative or publishing rights. Redis caching behind high-volume quote listing with search, filtering, sorting and pagination.",
+    tags: ["Java", "Spring Boot", "RBAC", "Redis", "REST APIs", "Multi-tenant"],
+    category: "Backend",
+    featured: true,
+  },
+  {
+    title: "Node.js BFF & Authentication",
+    description:
+      "A Backend-for-Frontend that handles authentication and orchestrates REST calls from the React UI to downstream Java microservices, giving the frontend one stable contract. Two auth mechanisms unified behind a single abstraction, then migrated to JWT with refresh tokens.",
+    tags: ["Node.js", "Express", "JWT", "Orchestration", "Angular to React"],
+    category: "Backend",
     featured: true,
   },
   {
     title: "Pricing Studio",
     description:
-      "Enterprise billing module migrated from legacy GWT to React — Products, Taxes, Bundles, Discounts, Policies, and Partners — backed by Java and Spring Boot services, with a 30% bundle-size reduction and improved TTI.",
-    tags: ["Java", "Spring Boot", "React", "REST APIs", "Performance Optimization", "Enterprise Billing"],
+      "Led the migration of six core billing modules — Products, Taxes, Bundles, Discounts, Policies and Partners — from legacy GWT to React, with a reusable component architecture on Context API and custom hooks. Bundle size down 30% and TTI improved across 1,000+ real-world use cases.",
+    tags: ["React", "Context API", "Code Splitting", "REST APIs", "MySQL"],
     category: "Web",
     featured: true,
   },
   {
-    title: "Service Desk Platform",
+    title: "Service Desk",
     description:
-      "Cross-platform React Native app for Android, iOS, and Web with offline sync, flexible ticket tagging, and Redis-cached search on Java and Spring Boot APIs — response times improved 10-15%.",
-    tags: ["Java", "Spring Boot", "React Native", "Offline Sync", "Redis", "Ticket Management"],
+      "Support ticketing with a dynamic tagging system for categorization and routing, and a Kafka-based SLA pipeline: scheduled jobs find expired SLA tasks in MongoDB and publish events, and consumers handle response, relief and resolution SLAs to trigger reminders, track breaches and run escalations.",
+    tags: ["Kafka", "MongoDB", "Redis", "SLA Automation", "Ticket Routing"],
+    category: "Backend",
+    featured: true,
+  },
+  {
+    title: "Smart Healthcare Appointment System",
+    description:
+      "A doctor web dashboard and a patient mobile app with live queue tracking and estimated consultation times — a working MVP built in three days using AI-assisted development.",
+    tags: ["React", "React Native", "Node.js", "PostgreSQL", "Queue Tracking"],
     category: "Mobile",
+    link: "https://github.com/MuraliPrasanth706/hospital-admin",
     featured: true,
   },
 ];
 
 /**
  * Numbers that came off real, attributable work — each one traceable to a
- * project below, rather than an unverifiable headcount.
+ * project above, rather than an unverifiable headcount.
  */
 export const achievements = [
-  { value: "4", label: "years shipping production SaaS" },
+  { value: "1,000+", label: "applications processed — AI document platform" },
+  { value: "98%", label: "completion rate in production" },
+  { value: "83%", label: "shorter link revalidation window" },
   { value: "30%", label: "smaller JS bundle — Pricing Studio" },
-  { value: "6", label: "billing modules re-platformed off GWT" },
-  { value: "2", label: "frontend re-platforms owned end to end" },
-  { value: "10–15%", label: "faster ticket search — Service Desk" },
+  { value: "10–15%", label: "faster APIs — Service Desk" },
 ];
 
 export const education = {
@@ -275,7 +279,7 @@ export const careerTimeline = [
 
 export const buildingSection = {
   title: "Building a Product",
-  subtitle: "Upcoming • Actively Building • Extending in Production",
+  subtitle: "Side projects in progress, and what is already in use",
 };
 
 export type BuildingProductItem = {
@@ -289,17 +293,20 @@ export type BuildingProductItem = {
 
 export const buildingProducts: BuildingProductItem[] = [
   {
-    tagline: "Something exciting is coming.",
-    description: "Building something I've always wished existed.",
-    status: "🚧 Building in Public",
-    cta: "Launching Soon.",
+    name: "UGC Desk",
+    tagline: "A multi-tenant CRM for creators and brands.",
+    description:
+      "The core CRM is built and in use. I built the authentication service and deal-stage management.",
+    status: "Core CRM in use — extending",
+    cta: "Launching soon",
   },
   {
-    name: "Live Queue",
-    tagline: "Streamlining hospital operations from admission to discharge.",
-    status: "✅ MVP Done — Extending with New Features",
-    cta: "View on GitHub",
-    link: "https://github.com/MuraliPrasanth706/hospital-admin",
+    name: "Offer Sprint",
+    tagline: "A Next.js web app on Neon Postgres.",
+    description:
+      "Built with Next.js and a Neon PostgreSQL database, deployed on Vercel.",
+    status: "Shipped on Vercel",
+    cta: "Launching soon",
   },
 ];
 
